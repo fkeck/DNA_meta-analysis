@@ -1,0 +1,36 @@
+R version 4.0.3 (2020-10-10)
+Platform: x86_64-redhat-linux-gnu (64-bit)
+Running under: Fedora 32 (Workstation Edition)
+
+Matrix products: default
+BLAS/LAPACK: /usr/lib64/libopenblas-r0.3.10.so
+
+locale:
+ [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C               LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8     LC_MONETARY=en_US.UTF-8   
+ [6] LC_MESSAGES=en_US.UTF-8    LC_PAPER=en_US.UTF-8       LC_NAME=C                  LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+ [1] kableExtra_1.3.4 magrittr_2.0.1   emmeans_1.6.0    glmmTMB_1.0.2.1  patchwork_1.1.1  forcats_0.5.0    stringr_1.4.0    dplyr_1.0.2      purrr_0.3.4     
+[10] readr_1.9.9.9000 tidyr_1.1.2      tibble_3.0.4     ggplot2_3.3.2    tidyverse_1.3.0 
+
+loaded via a namespace (and not attached):
+  [1] googledrive_1.0.1   minqa_1.2.4         colorspace_2.0-0    ellipsis_0.3.1      rio_0.5.26          rprojroot_2.0.2     estimability_1.3   
+  [8] snakecase_0.11.0    parameters_0.13.0   fs_1.5.0            rstudioapi_0.13     farver_2.0.3        bit64_4.0.5         fansi_0.4.1        
+ [15] mvtnorm_1.1-1       lubridate_1.7.9.2   xml2_1.3.2          splines_4.0.3       knitr_1.30          jsonlite_1.7.2      nloptr_1.2.2.2     
+ [22] broom_0.7.2         dbplyr_2.0.0        broom.mixed_0.2.6   effectsize_0.4.4-1  compiler_4.0.3      httr_1.4.2          backports_1.2.0    
+ [29] assertthat_0.2.1    Matrix_1.2-18       gargle_1.1.0        cli_2.4.0           htmltools_0.5.0     tools_4.0.3         igraph_1.2.6       
+ [36] coda_0.19-4         gtable_0.3.0        glue_1.4.2          reshape2_1.4.4      quickopen_0.1.0     tinytex_0.27        Rcpp_1.0.5         
+ [43] carData_3.0-4       cellranger_1.1.0    vctrs_0.3.5         svglite_2.0.0       nlme_3.1-149        insight_0.13.2      xfun_0.19          
+ [50] networkD3_0.4       openxlsx_4.2.3      lme4_1.1-26         rvest_0.3.6         lifecycle_0.2.0     statmod_1.4.35      googlesheets4_0.3.0
+ [57] MASS_7.3-53         scales_1.1.1        vroom_1.4.0.9000    hms_0.5.3           parallel_4.0.3      TMB_1.7.20          yaml_2.2.1         
+ [64] curl_4.3            gridExtra_2.3       stringi_1.6.1       bayestestR_0.9.0    desc_1.2.0          attachment_0.2.1    boot_1.3-25        
+ [71] zip_2.1.1           rlang_0.4.9         pkgconfig_2.0.3     systemfonts_1.0.2   evaluate_0.14       lattice_0.20-41     labeling_0.4.2     
+ [78] htmlwidgets_1.5.3   bit_4.0.4           tidyselect_1.1.0    DataExplorer_0.8.2  plyr_1.8.6          R6_2.5.0            generics_0.1.0     
+ [85] DBI_1.1.0           pillar_1.4.7        haven_2.3.1         foreign_0.8-80      withr_2.3.0         abind_1.4-5         janitor_2.0.1      
+ [92] modelr_0.1.8        crayon_1.3.4        car_3.0-10          utf8_1.1.4          tzdb_0.1.1          rmarkdown_2.5       grid_4.0.3         
+ [99] readxl_1.3.1        data.table_1.14.0   reprex_0.3.0        digest_0.6.27       webshot_0.5.2       xtable_1.8-4        munsell_0.5.0      
+[106] viridisLite_0.3.0  

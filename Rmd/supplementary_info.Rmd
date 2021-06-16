@@ -1,0 +1,518 @@
+---
+title: "Supplementary Information for:"
+output:
+  pdf_document:
+    toc_depth: 5
+    fig_caption: false
+    latex_engine: xelatex
+header-includes:
+  - \usepackage{leading}
+  - \usepackage{setspace}
+# bibliography: top_bottom_SI.bib
+csl: nature-communications.csl
+link-citations: true
+---
+
+```{r setup, include=FALSE}
+
+include_supp_text <- TRUE
+knitr::opts_chunk$set(echo = FALSE, message = FALSE)
+library(magrittr)
+#load("../data/Supp_mat.Rdata")
+txt_num <- 0
+fig_num <- 0
+tab_num <- 0
+ins_txt <- function(){
+  .GlobalEnv$txt_num <- .GlobalEnv$txt_num + 1
+  cat(paste0("##### Supplementary Material ", .GlobalEnv$txt_num, "."))
+}
+ins_tab <- function(){
+  .GlobalEnv$tab_num <- .GlobalEnv$tab_num + 1
+  cat(paste0("##### Supplementary Table ", .GlobalEnv$tab_num, "."))
+}
+ins_fig <- function(){
+  .GlobalEnv$fig_num <- .GlobalEnv$fig_num + 1
+  cat(paste0("##### Supplementary Figure ", .GlobalEnv$fig_num, "."))
+}
+
+library(kableExtra)
+usepackage_latex("booktabs")
+usepackage_latex("longtable")
+usepackage_latex("array")
+usepackage_latex("multirow")
+usepackage_latex("wrapfig")
+usepackage_latex("float")
+usepackage_latex("colortbl")
+usepackage_latex("pdflscape")
+usepackage_latex("tabu")
+usepackage_latex("threeparttable")
+usepackage_latex("threeparttablex")
+usepackage_latex("ulem", "normalem")
+usepackage_latex("makecell")
+
+```
+\leading{20pt}
+
+\begin{center}
+\begin{huge}  
+TITLE GOES HERE
+\end{huge} 
+\end{center}
+` `  
+
+François Keck, Rosetta Blackman, Raphael Bossart, Jeanine Brantschen, Marjorie Couton, Samuel Hürlemann, Dominik Kirschner, Nadine Locher, Heng Zhang and Florian Altermatt
+
+
+` `  
+` `  
+
+
+
+` `  
+` `  
+
+\newpage
+\renewcommand{\contentsname}{Supplementary Information}
+\setcounter{tocdepth}{5}
+\tableofcontents
+
+
+
+
+\singlespacing
+
+
+<!-- FIGURE SECTION STARTS HERE -->
+
+\pagebreak
+\addcontentsline{toc}{subsection}{Supplementary Figures}
+
+```{r barplot cat, fig.height=6}
+
+p <- dat %>%
+  select(biome_1,
+         biome_2,
+         group_target,
+         taxonomic_level,
+         marker,
+         sequencing_technology) %>% 
+  DataExplorer::plot_bar(nrow = 3, ncol = 2,
+                         ggtheme = theme_minimal(),
+                         theme_config = list(strip.text = element_text(size = 7),
+                                             axis.text = element_text(size = 6)))
+
+```
+
+```{r, results="asis"}
+ins_fig()
+```
+Number of observations across the different categories for each categorical variable recorded. Categories are represented as they were recorded and before the simplification used in Figure 2.
+
+\pagebreak
+
+
+```{r barplot continuous, fig.height=8.5}
+dat %>% 
+  select(any_of(variables_recorded)) %>% 
+  DataExplorer::plot_histogram(ncol = 4, nrow = 8,
+                               ggtheme = theme_minimal(),
+                         theme_config = list(strip.text = element_text(size = 7),
+                                             axis.text = element_text(size = 6)))
+
+```
+
+```{r, results="asis"}
+ins_fig()
+```
+Histograms of observations for each continuous variable recorded.
+
+\pagebreak
+
+
+```{r boxplot gamma by groups of organisms, fig.height=7}
+plots_frac$gamma_prop[[3]] +
+  labs(title = "") +
+  theme(legend.position = "bottom")
+
+```
+
+```{r, results="asis"}
+ins_fig()
+```
+Relative fractions of gamma diversity detected by the traditional method only, by DNA metabarcoding only and by both methods. Data are presented for different groups of organisms identified at different taxonomic levels. Boxplots show medians, first and third quartiles, and full ranges (limited to 1.5 × interquartile range). Grey lines connect values from the same comparison. Numbers below each panel indicate the number of comparisons represented.
+
+\pagebreak
+
+```{r boxplot alpha by groups of organisms, fig.height=7}
+plots_frac$alpha_prop[[3]] +
+  labs(title = "") +
+  theme(legend.position = "bottom")
+
+```
+
+```{r, results="asis"}
+ins_fig()
+```
+Relative fractions of alpha diversity detected by the traditional method only, by DNA metabarcoding only and by both methods. Data are presented for different groups of organisms identified at different taxonomic levels. Boxplots show medians, first and third quartiles, and full ranges (limited to 1.5 × interquartile range). Grey lines connect values from the same comparison. Numbers below each panel indicate the number of comparisons represented.
+
+\pagebreak
+
+
+```{r boxplot gamma by DNA source, fig.height=7}
+plots_frac$gamma_prop[[2]] +
+  labs(title = "") +
+  theme(legend.position = "bottom")
+
+```
+
+```{r, results="asis"}
+ins_fig()
+```
+Relative fractions of gamma diversity detected by the traditional method only, by DNA metabarcoding only and by both methods. Data are presented for different for different source of DNA and at different taxonomic levels. Boxplots show medians, first and third quartiles, and full ranges (limited to 1.5 × interquartile range). Grey lines connect values from the same comparison. Numbers below each panel indicate the number of comparisons represented.
+
+\pagebreak
+
+```{r boxplot alpha by DNA source, fig.height=7}
+plots_frac$alpha_prop[[2]] +
+  labs(title = "") +
+  theme(legend.position = "bottom")
+
+```
+
+```{r, results="asis"}
+ins_fig()
+```
+Relative fractions of alpha diversity detected by the traditional method only, by DNA metabarcoding only and by both methods. Data are presented for different source of DNA and at different taxonomic levels. Boxplots show medians, first and third quartiles, and full ranges (limited to 1.5 × interquartile range). Grey lines connect values from the same comparison. Numbers below each panel indicate the number of comparisons represented.
+
+\pagebreak
+
+```{r boxplot gamma by biome, fig.height=5}
+plots_frac$gamma_prop[[1]] +
+  labs(title = "") +
+  theme(legend.position = "bottom")
+
+```
+
+```{r, results="asis"}
+ins_fig()
+```
+Relative fractions of gamma diversity detected by the traditional method only, by DNA metabarcoding only and by both methods. Data are presented for different for different biomes and at different taxonomic levels. Boxplots show medians, first and third quartiles, and full ranges (limited to 1.5 × interquartile range). Grey lines connect values from the same comparison. Numbers below each panel indicate the number of comparisons represented.
+
+\pagebreak
+
+
+```{r boxplot alpha by biomes, fig.height=5}
+plots_frac$alpha_prop[[1]] +
+  labs(title = "") +
+  theme(legend.position = "bottom")
+
+```
+
+```{r, results="asis"}
+ins_fig()
+```
+Relative fractions of alpha diversity detected by the traditional method only, by DNA metabarcoding only and by both methods. Data are presented for different biomes and at different taxonomic levels. Boxplots show medians, first and third quartiles, and full ranges (limited to 1.5 × interquartile range). Grey lines connect values from the same comparison. Numbers below each panel indicate the number of comparisons represented.
+
+\pagebreak
+
+
+
+<!-- TABLE SECTION STARTS HERE -->
+
+\pagebreak
+\addcontentsline{toc}{subsection}{Supplementary Tables}
+```{r recorded fields, message = FALSE}
+
+kableExtra::kable(data_dic, "latex", digits = 3, booktabs = TRUE, linesep = "",
+                  col.names = linebreak(colnames(data_dic), align = "c")) %>%
+  kable_styling(font_size = 7)
+
+```
+
+```{r, results="asis"}
+ins_tab()
+```
+List of the variables extracted from the articles.
+
+
+\pagebreak
+```{r Table model ratio, message = FALSE}
+mod_table_cols <- c("Term",
+                    "Estimate", "Std. Error", "P-value",
+                    "Estimate", "Std. Error", "P-value")
+options(knitr.kable.NA = '')
+
+mod_gamma <- list(
+  mod_gamma_0 = broom.mixed::tidy(LR_mod$mod_gamma_0),
+  mod_gamma_1 = broom.mixed::tidy(LR_mod$mod_gamma_1)
+) %>% 
+  bind_rows(.id = "model") %>% 
+  pivot_wider(id_cols = c(effect, group, term),
+              names_from = model,
+              values_from = c(estimate, std.error, statistic, p.value)) %>% 
+  .[,c(1:3, 4, 6, 10, 5, 7, 11)] %>% 
+  magrittr::set_colnames(c("effect", "group", mod_table_cols)) %>% 
+  janitor::clean_names()
+
+mod_alpha <- list(
+  mod_alpha_0 = broom.mixed::tidy(LR_mod$mod_alpha_0),
+  mod_alpha_1 = broom.mixed::tidy(LR_mod$mod_alpha_1)
+) %>% 
+  bind_rows(.id = "model") %>% 
+  pivot_wider(id_cols = c(effect, group, term),
+              names_from = model,
+              values_from = c(estimate, std.error, statistic, p.value)) %>% 
+  .[,c(1:3, 4, 6, 10, 5, 7, 11)] %>% 
+  magrittr::set_colnames(c("effect", "group", mod_table_cols)) %>% 
+  janitor::clean_names()
+
+pr_title_gamma <- paste0("Gamma\n(N = ", LR_mod$mod_gamma_0$modelInfo$nobs, ", Studies = ",
+                         nlevels(LR_mod$mod_gamma_0$modelInfo$reTrms$cond$flist$study_ID), ")")
+pr_title_alpha <- paste0("Alpha\n(N = ", LR_mod$mod_alpha_0$modelInfo$nobs, ", Studies = ",
+                         nlevels(LR_mod$mod_alpha_0$modelInfo$reTrms$cond$flist$study_ID), ")")
+
+bind_rows(mod_gamma, mod_alpha) %>% 
+  filter(effect == "fixed") %>% 
+  select(-effect, -group) %>% 
+  mutate(term = str_replace(term, "group_target_simple", "Grp. ")) %>% 
+  kableExtra::kable("latex", digits = 3, booktabs = TRUE, linesep = "",
+                    col.names = linebreak(mod_table_cols, align = "c")) %>%
+  pack_rows(pr_title_gamma, 1, 4) %>%
+  pack_rows(pr_title_alpha, 5, 8) %>% 
+  kableExtra::add_header_above(c(" " = 1,"Model 1" = 3, "Model 2" = 3)) %>% 
+  kable_styling(font_size = 9)
+
+```
+
+```{r, results="asis"}
+ins_tab()
+```
+Results of the linear mixed models explaining the log-ratio between the traditional and the metabarcoding methods for gamma and alpha diversity. Model 1 is an intercept only model. Model 2 includes the effect of the group of organisms (Grp.). Both models include the study as a random effect (intercept).
+
+
+
+
+\pagebreak
+```{r Table model propfrac, message = FALSE}
+# mod_table_cols <- c("Term", "Estimate", "Std. Error", "P-value")
+# options(knitr.kable.NA = '')
+# 
+# mod_gamma <- list(broom.mixed::tidy(frac_mod$mod_gamma),
+#                   broom.mixed::tidy(frac_mod$mod_alpha)
+# ) %>% 
+#   bind_rows(.id = "model") %>% 
+#   select(effect, term, estimate, std.error, p.value) %>% 
+#   magrittr::set_colnames(c("effect", mod_table_cols)) %>% 
+#   janitor::clean_names()
+# 
+# pr_title_gamma <- paste0("Gamma\n(N = ", frac_mod$mod_gamma$modelInfo$nobs, ", Studies = ",
+#                          nlevels(frac_mod$mod_gamma$modelInfo$reTrms$cond$flist$study_ID),
+#                          ", Comparisons = ",
+#                          nlevels(frac_mod$mod_gamma$modelInfo$reTrms$cond$flist$`grp_obs:study_ID`),
+#                          ")")
+# pr_title_alpha <- paste0("Alpha\n(N = ", frac_mod$mod_alpha$modelInfo$nobs, ", Studies = ",
+#                          nlevels(frac_mod$mod_alpha$modelInfo$reTrms$cond$flist$study_ID),
+#                          ", Comparisons = ",
+#                          nlevels(frac_mod$mod_alpha$modelInfo$reTrms$cond$flist$`grp_obs:study_ID`),
+#                          ")")
+# 
+# mod_gamma %>% 
+#   filter(effect == "fixed") %>% 
+#   select(-effect) %>% 
+#   mutate(term = str_replace(term, "group_target_simple", "Grp. ")) %>% 
+#   mutate(term = str_replace(term, "fraction", "Fraction ")) %>% 
+#   mutate(p_value = scales::pvalue(p_value)) %>% 
+#   kableExtra::kable("latex", digits = 3, booktabs = TRUE, linesep = "", align = "lrrr",
+#                     col.names = linebreak(mod_table_cols, align = "c")) %>%
+#   pack_rows(pr_title_gamma, 1, 9) %>%
+#   pack_rows(pr_title_alpha, 10, 18) %>% 
+#   kable_styling(font_size = 9)
+
+
+mod_table_cols <- c("Term", "Chi-2", "Df", "P-value")
+options(knitr.kable.NA = '')
+
+mod_gamma <- list(broom::tidy(car::Anova(frac_mod$mod_gamma)),
+                  broom::tidy(car::Anova(frac_mod$mod_alpha))
+) %>% 
+  bind_rows(.id = "model") %>% 
+  select(term, statistic, df, p.value) %>% 
+  magrittr::set_colnames(mod_table_cols) %>% 
+  janitor::clean_names()
+
+pr_title_gamma <- paste0("Gamma\n(N = ", frac_mod$mod_gamma$modelInfo$nobs, ", Studies = ",
+                         nlevels(frac_mod$mod_gamma$modelInfo$reTrms$cond$flist$study_ID),
+                         ", Comparisons = ",
+                         nlevels(frac_mod$mod_gamma$modelInfo$reTrms$cond$flist$`grp_obs:study_ID`),
+                         ")")
+pr_title_alpha <- paste0("Alpha\n(N = ", frac_mod$mod_alpha$modelInfo$nobs, ", Studies = ",
+                         nlevels(frac_mod$mod_alpha$modelInfo$reTrms$cond$flist$study_ID),
+                         ", Comparisons = ",
+                         nlevels(frac_mod$mod_alpha$modelInfo$reTrms$cond$flist$`grp_obs:study_ID`),
+                         ")")
+
+mod_gamma %>% 
+  mutate(term = str_replace(term, "group_target_simple", "Target Group")) %>% 
+  mutate(term = str_replace(term, "fraction", "Fraction")) %>% 
+  mutate(p_value = scales::pvalue(p_value)) %>% 
+  kableExtra::kable("latex", digits = 3, booktabs = TRUE, linesep = "", align = "lrrr",
+                    col.names = linebreak(mod_table_cols, align = "c")) %>%
+  pack_rows(pr_title_gamma, 1, 3) %>%
+  pack_rows(pr_title_alpha, 4, 6) %>% 
+  column_spec(1, width = "8cm") %>% 
+  kable_styling(font_size = 9)
+
+```
+
+```{r, results="asis"}
+ins_tab()
+```
+Analysis of deviance (Type II Wald Chi-2 tests) of the generalized linear mixed models (beta regression) explaining the fractions of diversity detected by the traditional and the metabarcoding methods for gamma and alpha diversity. Models were fitted using comparisons made at species level only. Models include the effect of the type of fraction, the group of organisms (Grp.) and their interactions. Models include comparisons nested within studies as random effect (intercept).
+
+
+
+\pagebreak
+```{r Table model frac gamma paired test, message = FALSE}
+
+mod_table_cols <- c("", "Paired comparisons", "", "", "Estimate", "Std. Error", "P-value")
+
+bind_rows(
+  frac_mod$mod_gamma_emmeans %>% 
+    pairs() %>% 
+    as_tibble() %>% 
+    separate(contrast, into = c("A", "B"), sep = " - ") %>% 
+    mutate(A = str_remove_all(A, "[\\(\\)]"),
+           B = str_remove_all(B, "[\\(\\)]")) %>% 
+    separate(A, into = c("A1", "A2"), sep = " ", extra = "merge") %>% 
+    separate(B, into = c("B1", "B2"), sep = " ", extra = "merge") %>% 
+    filter(A1 == B1) %>% 
+    arrange(A1, B1, A2, B2) %>% 
+    mutate(comp_type = "Group of organisms", .before = A1) %>% 
+    select(-B1) %>% 
+    rename(comp_level = A1, comp_1 = A2, comp_2 = B2),
+  
+  frac_mod$mod_gamma_emmeans %>% 
+    pairs() %>% 
+    as_tibble() %>% 
+    separate(contrast, into = c("A", "B"), sep = " - ") %>% 
+    mutate(A = str_remove_all(A, "[\\(\\)]"),
+           B = str_remove_all(B, "[\\(\\)]")) %>% 
+    separate(A, into = c("A1", "A2"), sep = " ", extra = "merge") %>% 
+    separate(B, into = c("B1", "B2"), sep = " ", extra = "merge") %>% 
+    filter(A2 == B2) %>% 
+    arrange(A2, B2, A1, B1) %>% 
+    mutate(comp_type = "Fraction", .before = A1) %>% 
+    select(-B2) %>% 
+    rename(comp_level = A2, comp_1 = A1, comp_2 = B1)
+) %>%
+  select(-df, -t.ratio) %>% 
+  mutate(p.value = scales::pvalue(p.value)) %>% 
+  kableExtra::kable("latex", digits = 3, booktabs = TRUE, linesep = "", align = "llllrrr",
+                    col.names = linebreak(mod_table_cols, align = "c")) %>%
+  collapse_rows(1:2,row_group_label_position ='stack') %>% 
+  kable_styling(font_size = 9)
+
+```
+
+```{r, results="asis"}
+ins_tab()
+```
+Pairwise comparisons among factor combinations of the gamma diversity fraction model (see Supplementary Table 3) based on estimated marginal means. Only relevant comparisons (i.e. among the same group of organisms or among the same type of fraction) are displayed. P-values are adjusted using the correction of Tukey.
+
+
+\pagebreak
+```{r Table model frac alpha paired test, message = FALSE}
+
+mod_table_cols <- c("", "Paired comparisons", "", "", "Estimate", "Std. Error", "P-value")
+
+bind_rows(
+  frac_mod$mod_alpha_emmeans %>% 
+    pairs() %>% 
+    as_tibble() %>% 
+    separate(contrast, into = c("A", "B"), sep = " - ") %>% 
+    mutate(A = str_remove_all(A, "[\\(\\)]"),
+           B = str_remove_all(B, "[\\(\\)]")) %>% 
+    separate(A, into = c("A1", "A2"), sep = " ", extra = "merge") %>% 
+    separate(B, into = c("B1", "B2"), sep = " ", extra = "merge") %>% 
+    filter(A1 == B1) %>% 
+    arrange(A1, B1, A2, B2) %>% 
+    mutate(comp_type = "Group of organisms", .before = A1) %>% 
+    select(-B1) %>% 
+    rename(comp_level = A1, comp_1 = A2, comp_2 = B2),
+  
+  frac_mod$mod_alpha_emmeans %>% 
+    pairs() %>% 
+    as_tibble() %>% 
+    separate(contrast, into = c("A", "B"), sep = " - ") %>% 
+    mutate(A = str_remove_all(A, "[\\(\\)]"),
+           B = str_remove_all(B, "[\\(\\)]")) %>% 
+    separate(A, into = c("A1", "A2"), sep = " ", extra = "merge") %>% 
+    separate(B, into = c("B1", "B2"), sep = " ", extra = "merge") %>% 
+    filter(A2 == B2) %>% 
+    arrange(A2, B2, A1, B1) %>% 
+    mutate(comp_type = "Fraction", .before = A1) %>% 
+    select(-B2) %>% 
+    rename(comp_level = A2, comp_1 = A1, comp_2 = B1)
+) %>%
+  select(-df, -t.ratio) %>% 
+  mutate(p.value = scales::pvalue(p.value)) %>% 
+  kableExtra::kable("latex", digits = 3, booktabs = TRUE, linesep = "", align = "llllrrr",
+                    col.names = linebreak(mod_table_cols, align = "c")) %>%
+  collapse_rows(1:2,row_group_label_position ='stack') %>% 
+  kable_styling(font_size = 9)
+
+```
+
+```{r, results="asis"}
+ins_tab()
+```
+Pairwise comparisons among factor combinations of the alpha diversity fraction model (see Supplementary Table 3) based on estimated marginal means. Only relevant comparisons (i.e. among the same group of organisms or among the same type of fraction) are displayed. P-values are adjusted using the correction of Tukey.
+
+
+<!-- TEXT SECTION STARTS HERE -->
+
+\pagebreak
+\addcontentsline{toc}{subsection}{Supplementary Material}
+
+```{r, results="asis"}
+ins_txt()
+```
+
+Complete query used to search the Web of Science Core Collection. TS stands for topic (i.e. title, abstract and keywords), TI for title and PY for publication year. The star character (*) is a wildcard meaning zero or more character. The dollar sign ($) means zero or one character.
+
+` `  
+
+```
+TS=(*monitor* OR *assessment* OR communit*) AND
+TS=(molecular OR "environmental DNA" OR eDNA OR metabarcoding OR
+    "high throughput sequencing" OR "high-throughput sequencing" OR
+    HTS OR "next generation sequencing" OR "next-generation sequencing" OR NGS) AND
+TS=(morpholog* OR (traditional *monitoring) OR (conventional *monitoring) OR
+   (traditional *assessment*) OR (conventional *assessment*) OR "kick net" OR
+   kick-net$ OR kicknet$ OR electro$fishing OR fyke$net) AND
+TS=(aquatic OR freshwater$ OR marine OR stream$ OR river$ OR lake$ OR
+    pond$ OR dam$ OR reservoir$ OR estuar* OR lagoon* OR sea* OR ocean$ OR coast*) AND
+TS=(*invertebrate* OR Ephemeropter* OR Plecopter* OR Trichopter* OR mayfly OR
+    mayflies OR caddisfl* OR stonefly OR stoneflies OR oligochaeta OR
+    oligochaetes OR Diptera OR flies OR diatom* OR Bacillariophyta OR
+    fish OR plant$ OR macrophyt* OR *algae) AND
+PY=(2010-2025) NOT
+TS=(qPCR OR ddPCR) NOT
+TI=(soil OR diet OR dietary)
+
+```
+
+
+
+\pagebreak
+
+```{r, results="asis"}
+ins_txt()
+```
+
+Complete list of articles included in the meta-analysis.
+
+` `  
+
+```{r child = "supp_text.Rmd", eval = include_supp_text}
+```

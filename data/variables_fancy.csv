@@ -1,0 +1,66 @@
+col_names,fancy_names
+study_ID,Study
+biome_1,Biome
+biome_1_simple,Biome
+biome_2,Habitat
+biome_2_simple,Habitat
+eDNA_origin,DNA origin
+group_target,Group of organisms
+group_target_simple,Group of organisms
+taxonomic_level,Taxonomic level
+taxonomic_level_simple,Taxonomic level
+N_taxa_trad_only,Diversity
+N_taxa_eDNA_only,Diversity
+N_taxa_both,Diversity
+N_taxa_total,Diversity
+prop_N_taxa_trad_only,Diversity
+prop_N_taxa_eDNA_only,Diversity
+prop_N_taxa_both,Diversity
+ratio_N_taxa_trad_eDNA,Diversity
+DNA_alpha_mean,Diversity
+DNA_alpha_mean_sd,Diversity
+DNA_alpha_min,Diversity
+DNA_alpha_max,Diversity
+trad_alpha_mean,Diversity
+trad_alpha_mean_sd,Diversity
+trad_alpha_min,Diversity
+trad_alpha_max,Diversity
+both_alpha_mean,Diversity
+both_alpha_mean_sd,Diversity
+both_alpha_min,Diversity
+both_alpha_max,Diversity
+alpha_mean_total,Diversity
+alpha_mean_trad_only,Diversity
+alpha_mean_eDNA_only,Diversity
+alpha_mean_both,Diversity
+prop_alpha_mean_trad_only,Diversity
+prop_alpha_mean_eDNA_only,Diversity
+prop_alpha_mean_both,Diversity
+ratio_alpha_mean_trad_eDNA,Diversity
+N_sites,Number of sites
+N_samples,Number of samples
+year_trad_sampling_start,Year traditional sampling start
+year_trad_sampling_end,Year traditional sampling end
+year_eDNA_sampling_start,Year DNA sampling start
+year_eDNA_sampling_end,Year DNA sampling end
+trad_sampling_method,Traditional sampling method
+eDNA_filtering_pore_size,Filtering pore size (eDNA)
+eDNA_filtering_volume,Filtering volume (eDNA)
+DNA_bulk_weight,Bulk weight (DNA)
+region_sampled,Region
+lon,Longitude
+lat,Latitude
+marker,DNA marker
+marker_simple,DNA marker
+primer_forward,Primer forward
+primer_reverse,Primer reverse
+sequencing_technology,Sequencing technology
+sequencing_technology_simple,Sequencing technology
+N_reads_sequencer,Number of reads (sequencer)
+N_reads_used,Number of reads (used)
+N_OTU,Number of OTUs (total)
+N_OTU_target_group,Number of OTUs (target group)
+N_OTU_unspecific,Number of OTUs (unspecific)
+clustering,Clustering
+refdb_coverage,Reference database
+comments,Comments
