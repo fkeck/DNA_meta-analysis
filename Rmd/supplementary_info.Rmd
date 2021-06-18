@@ -52,13 +52,15 @@ usepackage_latex("makecell")
 
 \begin{center}
 \begin{huge}  
-TITLE GOES HERE
+Meta-analysis shows both congruence and complementarity of DNA metabarcoding to traditional methods for biological community assessment
 \end{huge} 
 \end{center}
+
 ` `  
-
-François Keck, Rosetta Blackman, Raphael Bossart, Jeanine Brantschen, Marjorie Couton, Samuel Hürlemann, Dominik Kirschner, Nadine Locher, Heng Zhang and Florian Altermatt
-
+\begin{center}
+François Keck, Rosetta Blackman, Raphael Bossart, Jeanine Brantschen, Marjorie Couton,\linebreak
+Samuel Hürlemann, Dominik Kirschner, Nadine Locher, Heng Zhang and Florian Altermatt
+\end{center}
 
 ` `  
 ` `  
