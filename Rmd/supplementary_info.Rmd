@@ -8,9 +8,6 @@ output:
 header-includes:
   - \usepackage{leading}
   - \usepackage{setspace}
-# bibliography: top_bottom_SI.bib
-csl: nature-communications.csl
-link-citations: true
 ---
 
 ```{r setup, include=FALSE}
@@ -18,7 +15,7 @@ link-citations: true
 include_supp_text <- TRUE
 knitr::opts_chunk$set(echo = FALSE, message = FALSE)
 library(magrittr)
-#load("../data/Supp_mat.Rdata")
+
 txt_num <- 0
 fig_num <- 0
 tab_num <- 0
