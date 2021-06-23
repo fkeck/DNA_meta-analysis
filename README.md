@@ -5,7 +5,7 @@
 
 This repository provides R code and data to reproduce results and figures from the paper:
 
-Keck, F. et al. XXXXX
+Keck, F. et al. Meta-analysis shows both congruence and complementarity of DNA metabarcoding to traditional methods for biological community assessment.
 
 
 ## Analyses
