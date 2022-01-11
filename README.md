@@ -1,7 +1,10 @@
 
 # Code and data for the paper metabarcoding/traditional method meta-analysis
 
-[![DOI](https://zenodo.org/badge/XXXXXX.svg)](https://zenodo.org/badge/latestdoi/XXXXX)
+
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5837361.svg)](https://doi.org/10.5281/zenodo.5837361)
+
 
 This repository provides R code and data to reproduce results and figures from the paper:
 
