@@ -62,7 +62,7 @@ dat <- dat %>%
   mutate(group_target_simple =
            case_when(group_target %in% c("fish") ~ "Fish",
                      group_target %in% c("macroinvertebrates", "EPT", "mosquitos", "oligochaetes", "nematodes", "xenacoelomorpha") ~ "Macroinvertebrates",
-                     group_target %in% c("diatoms", "zooplankton", "phytoplankton", "plankton", "cyanobacteria", "protists") ~ "Microorganisms",
+                     group_target %in% c("diatoms", "zooplankton", "phytoplankton", "plankton", "cyanobacteria", "protists") ~ "Plankton/MPB",
                      TRUE ~ "Others"),
          .after = group_target
   ) %>% 
@@ -120,7 +120,7 @@ set_order_factor <- function (x) {
   
   if(exists("group_target_simple", x)) {
     x$group_target_simple <- factor(x$group_target_simple,
-                                    levels = c("Microorganisms",
+                                    levels = c("Plankton/MPB",
                                                "Macroinvertebrates",
                                                "Fish",
                                                "Others"))
@@ -199,7 +199,7 @@ scale_color_organism <- function() {
                                color_macro,
                                color_vertb,
                                color_other),
-                    breaks = c("Microorganisms",
+                    breaks = c("Plankton/MPB",
                                "Macroinvertebrates",
                                "Fish",
                                "Others"))
@@ -211,7 +211,7 @@ scale_fill_organism <- function() {
                                color_macro,
                                color_vertb,
                                color_other),
-                    breaks = c("Microorganisms",
+                    breaks = c("Plankton/MPB",
                                "Macroinvertebrates",
                                "Fish",
                                "Others"))

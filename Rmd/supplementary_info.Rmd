@@ -138,7 +138,7 @@ plots_frac$gamma_prop[[3]] +
 ```{r, results="asis"}
 ins_fig()
 ```
-Relative fractions of gamma diversity detected by the traditional method only, by DNA metabarcoding only and by both methods. Data are presented for different groups of organisms identified at different taxonomic levels. Boxplots show medians, first and third quartiles, and full ranges (limited to 1.5 × interquartile range). Grey lines connect values from the same comparison. Numbers below each panel indicate the number of comparisons represented.
+Relative fractions of gamma diversity detected by the traditional method only, by DNA metabarcoding only and by both methods. Data are presented for different groups of organisms identified at different taxonomic levels. MPB stands for microphytobenthos. Boxplots show medians, first and third quartiles, and full ranges (limited to 1.5 × interquartile range). Grey lines connect values from the same comparison. Numbers below each panel indicate the number of comparisons represented.
 
 \pagebreak
 
@@ -152,7 +152,7 @@ plots_frac$alpha_prop[[3]] +
 ```{r, results="asis"}
 ins_fig()
 ```
-Relative fractions of alpha diversity detected by the traditional method only, by DNA metabarcoding only and by both methods. Data are presented for different groups of organisms identified at different taxonomic levels. Boxplots show medians, first and third quartiles, and full ranges (limited to 1.5 × interquartile range). Grey lines connect values from the same comparison. Numbers below each panel indicate the number of comparisons represented.
+Relative fractions of alpha diversity detected by the traditional method only, by DNA metabarcoding only and by both methods. Data are presented for different groups of organisms identified at different taxonomic levels. MPB stands for microphytobenthos. Boxplots show medians, first and third quartiles, and full ranges (limited to 1.5 × interquartile range). Grey lines connect values from the same comparison. Numbers below each panel indicate the number of comparisons represented.
 
 \pagebreak
 
@@ -416,7 +416,7 @@ bind_rows(
 ```{r, results="asis"}
 ins_tab()
 ```
-Pairwise comparisons among factor combinations of the gamma diversity fraction model (see Supplementary Table 3) based on estimated marginal means. Only relevant comparisons (i.e. among the same group of organisms or among the same type of fraction) are displayed. P-values are adjusted using the correction of Tukey.
+Pairwise comparisons among factor combinations of the gamma diversity fraction model (see Supplementary Table 3) based on estimated marginal means. Only relevant comparisons (i.e. among the same group of organisms or among the same type of fraction) are displayed. MPB stands for microphytobenthos. P-values are adjusted using the correction of Tukey.
 
 
 \pagebreak
@@ -465,7 +465,7 @@ bind_rows(
 ```{r, results="asis"}
 ins_tab()
 ```
-Pairwise comparisons among factor combinations of the alpha diversity fraction model (see Supplementary Table 3) based on estimated marginal means. Only relevant comparisons (i.e. among the same group of organisms or among the same type of fraction) are displayed. P-values are adjusted using the correction of Tukey.
+Pairwise comparisons among factor combinations of the alpha diversity fraction model (see Supplementary Table 3) based on estimated marginal means. Only relevant comparisons (i.e. among the same group of organisms or among the same type of fraction) are displayed. MPB stands for microphytobenthos. P-values are adjusted using the correction of Tukey.
 
 
 <!-- TEXT SECTION STARTS HERE -->
@@ -483,21 +483,33 @@ Complete query used to search the Web of Science Core Collection. TS stands for 
 
 ```
 TS=(*monitor* OR *assessment* OR communit*) AND
-TS=(molecular OR "environmental DNA" OR eDNA OR metabarcoding OR
+TS=(molecular OR
+    "environmental DNA" OR eDNA OR metabarcoding OR
     "high throughput sequencing" OR "high-throughput sequencing" OR
-    HTS OR "next generation sequencing" OR "next-generation sequencing" OR NGS) AND
-TS=(morpholog* OR (traditional *monitoring) OR (conventional *monitoring) OR
-   (traditional *assessment*) OR (conventional *assessment*) OR "kick net" OR
-   kick-net$ OR kicknet$ OR electro$fishing OR fyke$net) AND
-TS=(aquatic OR freshwater$ OR marine OR stream$ OR river$ OR lake$ OR
-    pond$ OR dam$ OR reservoir$ OR estuar* OR lagoon* OR sea* OR ocean$ OR coast*) AND
-TS=(*invertebrate* OR Ephemeropter* OR Plecopter* OR Trichopter* OR mayfly OR
-    mayflies OR caddisfl* OR stonefly OR stoneflies OR oligochaeta OR
-    oligochaetes OR Diptera OR flies OR diatom* OR Bacillariophyta OR
-    fish OR plant$ OR macrophyt* OR *algae) AND
+    HTS OR "next generation sequencing" OR
+    "next-generation sequencing" OR NGS) AND
+TS=(morpholog* OR (traditional *monitoring) OR
+    (conventional *monitoring) OR
+    (traditional *assessment*) OR
+    (conventional *assessment*) OR
+    kick-net$ OR kicknet$ OR
+    electro$fishing OR
+    fyke$net) AND
+TS = (aquatic OR freshwater$ OR marine OR
+    stream$ OR river$ OR
+    lake$ OR dam$ OR reservoir$ OR
+    estuar* OR lagoon* OR sea* OR ocean$ OR coast*) AND
+TS = (*invertebrate* OR
+    Ephemeropter* OR Plecopter* OR Trichopter* OR
+    mayfly OR mayflies OR caddisfl* OR stonefly OR stoneflies OR
+    oligochaeta OR oligochaetes OR
+    Diptera OR flies OR
+    diatom* OR Bacillariophyta OR
+    fish OR plant$ OR macrophyt* OR
+    *algae OR *plankton OR mollusc*) AND
 PY=(2010-2025) NOT
 TS=(qPCR OR ddPCR) NOT
-TI=(soil OR diet OR dietary)
+TI=(soil OR diet OR dietary) 
 
 ```
 
